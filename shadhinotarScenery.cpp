@@ -15,6 +15,21 @@ void drawCircle(float cx, float cy, float r, int num_segments) {
     glEnd();
 }
 
+float birdX1 = 550, birdY1 = 550;  
+float birdX2 = 500, birdY2 = 500;  
+void drawBird(float x, float y) { 
+    glColor3f(0.0f, 0.0f, 0.0f); // Color for birds 
+    glLineWidth(5); 
+    glBegin(GL_LINES); 
+    glVertex2f(x, y); 
+    glVertex2f(x - 10, y + 10); 
+    glVertex2f(x, y); 
+    glVertex2f(x + 10, y + 10); 
+    glEnd(); 
+    glLineWidth(1); 
+}
+
+
 void display() {
 
     glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
@@ -1025,12 +1040,191 @@ void display() {
 
     glBegin(GL_POLYGON);
     glColor3f(1.0f, 0.965f, 0.918f);
-    glVertex2d(70, -280);
-    glVertex2d(60, -250);
-    glVertex2d(0, -220);
+    glVertex2d(80, -250);
+    glVertex2d(40, -220);
+    glVertex2d(0, -230);
     glVertex2d(0, -300);
     glVertex2d(100, -300);  
     glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(1.0f, 0.965f, 0.918f);
+    glVertex2d(180, -220);
+    glVertex2d(110, -220);
+    glVertex2d(80, -250);
+    glVertex2d(100, -300);
+    glVertex2d(158, -270);  
+    glEnd();
+
+    //neck
+    glBegin(GL_POLYGON);
+    glColor3f(0.878f, 0.745f, 0.588f);
+    glVertex2d(105, -155);
+    glVertex2d(50, -155);
+    // glVertex2d(-15, -480);
+    glVertex2d(50, -200);
+    glVertex2d(105, -200); 
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.878f, 0.745f, 0.588f);
+    glVertex2d(105, -200);
+    glVertex2d(50, -200);
+    glVertex2d(40, -220); 
+    glVertex2d(80, -250);
+    glVertex2d(110, -220);
+    glEnd();
+
+    //head
+    glColor3f(0.11f, 0.11f, 0.11f);
+    drawCircle(80, -120, 70, 100);
+
+    //right shoulder
+    glBegin(GL_POLYGON);
+    glColor3f(0.878f, 0.745f, 0.588f);
+    glVertex2d(210, -220);
+    glVertex2d(180, -220);
+    glVertex2d(158, -270);
+    glVertex2d(173, -300);
+    glVertex2d(215, -250);
+    glEnd();
+
+    //right upper
+    glBegin(GL_POLYGON);
+    glColor3f(0.878f, 0.745f, 0.588f);
+    glVertex2d(215, -250);
+    glVertex2d(173, -300);
+    glVertex2d(190, -350);
+    glVertex2d(230, -370);
+    // glVertex2d(215, -250);
+    glEnd();
+
+    //right lower
+    glBegin(GL_POLYGON);
+    glColor3f(0.878f, 0.745f, 0.588f);
+    glVertex2d(230, -370);
+    glVertex2d(190, -350);
+    glVertex2d(170, -390);
+    glVertex2d(166, -450);
+    // glVertex2d(215, -250);
+    glEnd();
+
+    // left shoulder
+    glBegin(GL_POLYGON);
+    glColor3f(0.878f, 0.745f, 0.588f);
+    glVertex2d(0, -230);
+    glVertex2d(-10, -230);
+    glVertex2d(-40, -300);
+    glVertex2d(-20, -330);
+    glVertex2d(0, -300);
+    glEnd();
+
+    //upper left
+    glBegin(GL_POLYGON);
+    glColor3f(0.878f, 0.745f, 0.588f);
+    glVertex2d(-100, -130);
+    glVertex2d(-150, -140);
+    glVertex2d(-40, -300);
+    glVertex2d(-10, -230);
+    // glVertex2d(215, -250);
+    glEnd();
+
+    //lower left
+    glBegin(GL_POLYGON);
+    glColor3f(0.878f, 0.745f, 0.588f);
+    glVertex2d(-10, -30);
+    glVertex2d(-40, 0);
+    glVertex2d(-150, -140);
+    glVertex2d(-90, -150);
+    // glVertex2d(215, -250);
+    glEnd();
+
+    //gun
+    glBegin(GL_POLYGON);
+    glColor3f(0.478f, 0.478f, 0.478f);
+    glVertex2d(10, 10);
+    glVertex2d(-40, 0);
+    glVertex2d(0, -40);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.478f, 0.478f, 0.478f);
+    glVertex2d(60, -10);
+    glVertex2d(10, 10);
+    glVertex2d(0, -40);
+    glVertex2d(30, -60);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.478f, 0.478f, 0.478f);
+    glVertex2d(-50, 60);
+    glVertex2d(-70, 30);
+    glVertex2d(0, -40);
+    glVertex2d(10, 10);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.478f, 0.478f, 0.478f);
+    glVertex2d(-70, 80);
+    glVertex2d(-80, 110);
+    glVertex2d(-100, 70);
+    glVertex2d(-70, 30);
+    glVertex2d(-50, 60);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.478f, 0.478f, 0.478f);
+    glVertex2d(-80, 110);
+    glVertex2d(-100, 90);
+    glVertex2d(-120, 120);
+    glVertex2d(-120, 80);
+    glVertex2d(-70, 30);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.478f, 0.478f, 0.478f);
+    glVertex2d(-120, 120);
+    glVertex2d(-200, 200);
+    glVertex2d(-220, 180);
+    glVertex2d(-120, 80);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.478f, 0.478f, 0.478f);
+    glVertex2d(-70, 30);
+    glVertex2d(-100, 70);
+    glVertex2d(-115, 20);
+    glVertex2d(-85, 0);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glColor3f(0.478f, 0.478f, 0.478f);
+    glVertex2d(-85, 0);
+    glVertex2d(-115, 20);
+    glVertex2d(-140, 10);
+    glVertex2d(-125, -20);
+    glEnd();
+
+    //subtitle
+    glBegin(GL_POLYGON);
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glVertex2d(900, -700);
+    glVertex2d(-900, -700);
+    glVertex2d(-900, -750);
+    glVertex2d(900, -750);
+    glEnd();
+
+    //birds
+    drawBird(birdX1, birdY1); 
+    drawBird(birdX2, birdY2); 
+ 
+    // Move 1st & 2nd bird to right 
+    birdX1 += 0.03;  
+    birdX2 += 0.03;  
+ 
+    // Reset birds pos 
+    if (birdX1 > 900) birdX1 = -900; 
+    if (birdX2 > 900) birdX2 = -900;
 
     glFlush();
 
@@ -1053,7 +1247,7 @@ int main(int argc, char** argv) {
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f); 
     glMatrixMode(GL_PROJECTION); 
     glLoadIdentity(); 
-    glOrtho(-900, 900, -700, 700, -1, 1);
+    glOrtho(-900, 900, -750, 700, -1, 1);
     glutDisplayFunc(display);
     glutIdleFunc(display);
     glutMainLoop();
